@@ -1,2 +1,2 @@
-# Api Ogs
- criação de uma api para ogs 
+# Rocketseat Semana Omnistack 11 - Api Ogs
+ criação de uma aplicação para ogs 
