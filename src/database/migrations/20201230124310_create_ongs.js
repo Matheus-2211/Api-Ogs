@@ -1,6 +1,6 @@
 exports.up = function(knex) {
     return knex.schema.createTable('ongs', function(table) { //criado uma tabela para aplicação
-        table.string('id').primery();
+        table.string('id').primary();
         table.string('name').notNullable();
         table.string('email').notNullable();
         table.string('whatsapp').notNullable();
