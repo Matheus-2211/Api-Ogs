@@ -1,23 +1,28 @@
 {
-  "name": "Api-Ogs",
-  "version": "1.0.0",
-  "description": "criação de uma api para ogs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Matheus-2211/Api-Ogs.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Matheus-2211/Api-Ogs/issues"
-  },
-  "homepage": "https://github.com/Matheus-2211/Api-Ogs#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "Api-Ogs",
+    "version": "1.0.0",
+    "description": "criação de uma api para ogs",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Matheus-2211/Api-Ogs.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Matheus-2211/Api-Ogs/issues"
+    },
+    "homepage": "https://github.com/Matheus-2211/Api-Ogs#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "knex": "^0.21.15",
+        "sqlite3": "^5.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.6"
+    }
 }
