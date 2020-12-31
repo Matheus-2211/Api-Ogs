@@ -4,10 +4,16 @@ const connection = require('../database/connection');
 module.exports = {
 
     async index(request, response) {
-        const incidents = await connection('incidents').select('*'); //listagem dos casos
+        const { page = 1 } = request.query;
+
+        const incidents = await connection('incidents') //listagem dos casos
+            .limit(5)
+            .offset((page - 1) * 5)
+            .select('*');
 
         return response.json(incidents);
     },
+
 
     async create(request, response) {
         const { title, description, value } = request.body;
@@ -23,6 +29,7 @@ module.exports = {
 
         return response.json({ id });
     },
+
 
     async delete(request, response) {
         const { id } = request.params;
