@@ -6,10 +6,23 @@ module.exports = {
     async index(request, response) {
         const { page = 1 } = request.query;
 
+        const [count] = await connection('incidents').count() // retorna a quantidade de casos que tem cadastrado
+
         const incidents = await connection('incidents') //listagem dos casos
-            .limit(5)
-            .offset((page - 1) * 5)
-            .select('*');
+            .join('ongs', 'ongs.id', '=', 'incidents.ong_id') //relacionar dado de duas tabela
+            .limit(5) //limeti os dado da pagina 1 para 5 registro
+            .offset((page - 1) * 5) // comando usado para pular 5 registro 
+            .select([
+                'incidents.*',
+                'ongs.name',
+                'ongs.email',
+                'ongs.whatsapp',
+                'ongs.city',
+                'ongs.uf'
+            ]);
+
+
+        response.header('X-Total-Count', count['count(*)'])
 
         return response.json(incidents);
     },
