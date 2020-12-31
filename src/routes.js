@@ -2,10 +2,6 @@ const express = require('express');
 
 const OngController = require('./controllers/OngController');
 
-const connection = require('./database/connection');
-const { request } = require('http');
-const { response } = require('express');
-
 const routes = express.Router(); // Criado uma varia chamdo routes, ou seja eu estou desacoplando modo de rotas do express em uma nova varialvel
 
 //Rota listagem de ONGS

@@ -1,4 +1,5 @@
 const express = require('express'); // eu estou importando o modulo chamado express para dentro da variavel express
+
 const routes = require('./routes'); // importando as minhas rotas para o meu index
 
 const app = express(); //criação de uma varialvel que vai amazenar minha aplicação
